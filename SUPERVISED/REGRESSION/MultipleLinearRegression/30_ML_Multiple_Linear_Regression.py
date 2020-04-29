@@ -17,9 +17,12 @@
 # Importing the libraries
 import numpy as np
 import pandas as pd
+import os
+
+os.chdir("E:/Machine_Learning/SUPERVISED/Data_files")
 
 # Importing the dataset
-dataset = pd.read_csv('data/Salary_Classification.csv')
+dataset = pd.read_csv('Salary_Classification.csv')
 
 # Check data Types for each columns
 print(dataset.dtypes)
@@ -286,7 +289,7 @@ import numpy as np
 
 
 # Importing the dataset
-dataset = pd.read_csv('data/cars.csv')
+dataset = pd.read_csv('cars.csv')
 X = dataset.iloc[:, :-1].values
 y = dataset.iloc[:, -1].values.reshape(-1,1)
 
