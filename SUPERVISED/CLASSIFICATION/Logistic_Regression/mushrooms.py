@@ -1,4 +1,4 @@
-
+"""
 Q2. (Create a program that fulfills the following specification.)
 mushrooms.csv
 
@@ -101,7 +101,7 @@ habitat: grasses=g,leaves=l,meadows=m,paths=p,urban=u,waste=w,woods=d
     Check accuracy of the model.
 
 
-
+"""
 
 
 
@@ -112,6 +112,10 @@ habitat: grasses=g,leaves=l,meadows=m,paths=p,urban=u,waste=w,woods=d
 import pandas as pd
 import numpy as np
 import matplotlib.pyplot as plt
+import os
+
+os.chdir("E:/Machine_Learning/SUPERVISED/Data_files")
+
 
 
 
@@ -124,7 +128,7 @@ data.head()
 
 
 
-features = data.iloc[:,[6,21,22]].values
+features = data.iloc[:,[5,21,22]].values
 labels = data.iloc[:,0].values
 
 
@@ -134,20 +138,26 @@ labels = data.iloc[:,0].values
 from sklearn.compose import ColumnTransformer
 from sklearn.preprocessing import OneHotEncoder
 
-columnTransformer = ColumnTransformer([('encoder' , OneHotEncoder(), [0])], remainder = 'passthrough')
-features = np.array(columnTransformer.fit_transform(features), dtype = np.str)
-features = features[:,1:]
+#columnTransformer = ColumnTransformer([('encoder' , LabelEncoder(), [0])], remainder = 'passthrough')
+#features = np.array(columnTransformer.fit_transform(features[]), dtype = np.str)
+#features = features[:,1:]
 
 
-columnTransformer = ColumnTransformer([('encoder' , OneHotEncoder(), [1])], remainder = 'passthrough')
-features = np.array(columnTransformer.fit_transform(features), dtype = np.str)
-features = features[:,1:]
+#columnTransformer = ColumnTransformer([('encoder' , OneHotEncoder(), [1])], remainder = 'passthrough')
+#features = np.array(columnTransformer.fit_transform(features), dtype = np.str)
+#features = features[:,1:]
 
 
-columnTransformer = ColumnTransformer([('encoder' , OneHotEncoder(), [6])], remainder = 'passthrough')
-features = np.array(columnTransformer.fit_transform(features), dtype = np.str)
-features = features[:,1:]
+#columnTransformer = ColumnTransformer([('encoder' , OneHotEncoder(), [6])], remainder = 'passthrough')
+#features = np.array(columnTransformer.fit_transform(features), dtype = np.str)
+#features = features[:,1:]
 
+
+for i in range(features.shape[1]):
+        
+    columnTransformer = ColumnTransformer([('encoder' , OneHotEncoder(), [-1])], remainder = 'passthrough')
+    features = np.array(columnTransformer.fit_transform(features), dtype = np.str)
+    features = features[:,1:]
 
 
 features = features.astype('float64') 
