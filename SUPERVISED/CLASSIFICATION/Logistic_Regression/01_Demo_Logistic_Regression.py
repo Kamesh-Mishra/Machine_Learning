@@ -43,7 +43,7 @@ The goal is to use different variables such as tobacco usage, family history,
 ldl cholesterol levels, alcohol usage, obesity and more.
 """
 
-os.chdir("E:/Machine_Learning/files")
+os.chdir("E:/Machine_Learning/SUPERVISED/Data_files")
 heart = pd.read_csv('Heart_Disease.csv')  
 heart.head()
 
@@ -53,6 +53,10 @@ features = heart.iloc[:,:9].values
 # Splitting the dataset into the Training set and Test set
 from sklearn.model_selection import train_test_split
 features_train, features_test, labels_train, labels_test = train_test_split(features, labels, test_size = 0.25, random_state = 0)
+
+
+
+# https://www.youtube.com/watch?v=hMpjSrXBE3U
 
 # Feature Scaling
 from sklearn.preprocessing import StandardScaler
