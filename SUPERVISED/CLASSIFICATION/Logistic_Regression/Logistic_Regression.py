@@ -3,7 +3,7 @@ import matplotlib.pyplot as mtp
 import pandas as pd  
 import os
 
-os.chdir("E:/Machine_Learning/files")
+os.chdir("E:/Machine_Learning/SUPERVISED/Data_files")
 # Importing the dataset
 data_set = pd.read_csv('Social_Network_Ads.csv')  
 
