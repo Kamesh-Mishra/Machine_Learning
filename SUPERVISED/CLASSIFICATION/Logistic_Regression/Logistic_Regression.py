@@ -1,3 +1,11 @@
+
+
+
+
+
+#https://ml-cheatsheet.readthedocs.io/en/latest/logistic_regression.html
+
+
 import numpy as nm  
 import matplotlib.pyplot as mtp  
 import pandas as pd  

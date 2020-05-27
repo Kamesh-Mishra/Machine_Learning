@@ -114,6 +114,9 @@ import sklearn as sk
 import pandas as pd
 import matplotlib.pyplot as plt
 import numpy as np
+import os
+
+os.chdir("E:/Machine_Learning/SUPERVISED/Data_files")
 
 """
 We will look at data regarding coronary heart disease (CHD) in South Africa. 
@@ -122,7 +125,7 @@ ldl cholesterol levels, alcohol usage, obesity and more.
 """
 
 
-heart = pd.read_csv('data/Heart_Disease.csv', sep=',',header=0)  
+heart = pd.read_csv('Heart_Disease.csv', sep=',',header=0)  
 
 
 # There is no Categorical Data

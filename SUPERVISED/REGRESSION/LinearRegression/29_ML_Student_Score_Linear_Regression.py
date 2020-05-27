@@ -65,7 +65,7 @@ import numpy as np
 import matplotlib.pyplot as plt  
 import os
 
-os.chdir("E:/Machine_Learning/files")
+os.chdir("E:/Machine_Learning/SUPERVISED/Data_files")
 
 #imports the CSV dataset using pandas
 dataset = pd.read_csv('student_scores.csv')  
@@ -273,7 +273,7 @@ import pandas as pd
 import matplotlib.pyplot as plt  
 import os
 
-os.chdir("E:/Machine_Learning/files")
+os.chdir("E:/Machine_Learning/SUPERVISED/Data_files")
 
 #imports the CSV dataset using pandas
 dataset = pd.read_csv('student_scores.csv')  

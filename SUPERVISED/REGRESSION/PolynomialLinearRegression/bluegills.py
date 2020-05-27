@@ -30,7 +30,7 @@ import matplotlib.pyplot as plt
 import pandas as pd
 import os
 
-os.chdir("E:/Machine_Learning/files")
+os.chdir("E:/Machine_Learning/SUPERVISED/Data_files")
 # Importing the dataset
 dataset = pd.read_csv('bluegills.csv')
 
@@ -111,7 +111,7 @@ import matplotlib.pyplot as plt
 import pandas as pd
 import os
 
-os.chdir("E:/Machine_Learning/files")
+os.chdir("E:/Machine_Learning/SUPERVISED/Data_files")
 # Importing the dataset
 dataset = pd.read_csv('bluegills.csv')
 

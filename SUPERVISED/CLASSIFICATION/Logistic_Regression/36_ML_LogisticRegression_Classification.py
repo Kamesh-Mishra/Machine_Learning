@@ -279,7 +279,7 @@ import matplotlib.pyplot as plt
 import pandas as pd
 import os
 
-os.chdir("E:/Machine_Learning/files")
+os.chdir("E:/Machine_Learning/SUPERVISED/Data_files")
 # Importing the dataset
 dataset = pd.read_csv('Social_Network_Ads.csv')
 X = dataset.iloc[:, [2, 3]].values
@@ -427,7 +427,7 @@ import matplotlib.pyplot as plt
 import pandas as pd
 import os
 
-os.chdir("E:/Machine_Learning/files")
+os.chdir("E:/Machine_Learning/SUPERVISED/Data_files")
 # Importing the dataset
 dataset = pd.read_csv('Social_Network_Ads.csv')
 features = dataset.iloc[:, [2, 3]].values

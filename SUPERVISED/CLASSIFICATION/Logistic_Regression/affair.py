@@ -29,33 +29,19 @@ Optional
 import numpy as np
 import pandas as pd
 import matplotlib.pyplot as plt
+import os
 
 
-
-
-
-
-
-
+os.chdir("E:/Machine_Learning/SUPERVISED/Data_files")
 dataset = pd.read_csv("affairs.csv")
 
 d =  dataset["affair"].value_counts(normalize= True).tolist()[1]*100
 print("% women had an affair : ",round(d,2),"%")
 
 features = dataset.iloc[:,:-1].values
-
 labels  = dataset.iloc[:,-1].values
 
-
-
 #column transformer
-
-
-
-
-
-
-
 from sklearn.compose import ColumnTransformer
 from sklearn.preprocessing import OneHotEncoder
 
@@ -63,8 +49,6 @@ columnTransformer = ColumnTransformer([('encoder' , OneHotEncoder(), [6,7])], re
 features = np.array(columnTransformer.fit_transform(features), dtype = np.float32)
 
 features = np.concatenate((features[:,1:5], features[:,6:]),axis = 1)
-
-
 
 
 # columnTransformer = ColumnTransformer([('encoder', OneHotEncoder(), [6])], remainder = 'passthrough')
@@ -97,8 +81,8 @@ from sklearn.metrics import confusion_matrix
 cm = confusion_matrix(labels_test, labels_pred)
 
 
-
-
+score = classifier.score(features_test,labels_test)
+print(score)
 
 
 from sklearn.linear_model import LogisticRegression
