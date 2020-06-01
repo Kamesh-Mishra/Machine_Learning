@@ -10,7 +10,7 @@ import pandas as pd
 import matplotlib.pyplot as plt
 import os
 
-os.chdir("E:/Machine_Learning/files")
+os.chdir("E:/Machine_Learning/SUPERVISED/Data_files")  
 dataset = pd.read_csv("Match_Making.csv")
 features = dataset.iloc[:, :-1].values
 labels = dataset.iloc[:, [-1]].values
