@@ -91,8 +91,28 @@ from sklearn.metrics import accuracy_score
 print (accuracy_score(y_test, y_pred)*100)
 
 
+os.chdir('E:/Machine_Learning/SUPERVISED/CLASSIFICATION/KNN/')
+# saving model as pickle file
+
+import pickle
+
+with open('model_pickle','wb') as f:
+    pickle.dump(classifier,f)
+
+
+with open('model_pickle','rb') as f:
+    mp = pickle.load(f)
+
+
 x = [[6,2,5,3,2,7,9,2,4]]
-predd = classifier.predict(x)
+predd = mp.predict(x)
+print(predd)
+
+
+# x = [[6,2,5,3,2,7,9,2,4]]
+# predd = classifier.predict(x)
+
+
 
 if predd == 2:
     Type = 'Benign' 
