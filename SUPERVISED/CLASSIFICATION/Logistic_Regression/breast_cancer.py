@@ -92,8 +92,40 @@ print(cm)
 print (classifier.score(features_train,labels_train))
 
 
+
+
+os.chdir("E:/Machine_Learning/SUPERVISED/CLASSIFICATION/Logistic_Regression/")
+
+# Save Model To a File Using Python Pickle
+import pickle
+with open('logistic_bcancer_model_pickle','wb') as file:
+    pickle.dump(classifier,file)
+with open('logistic_bcancer_model_pickle','rb') as file:
+    mp = pickle.load(file)
+
 x = [[6,2,5,3,2,7,9,2,4]]
-predd = classifier.predict(x)
+print(mp.predict(x))
+
+
+
+# Save Trained Model Using joblib
+from sklearn.externals import joblib
+joblib.dump(classifier, 'logistic_BCancer_model_joblib')
+
+mj = joblib.load('logistic_BCancer_model_joblib')
+
+x = [[6,2,5,3,2,7,9,2,4]]
+print(mj.predict(x))
+
+  
+
+
+
+
+
+
+# x = [[6,2,5,3,2,7,9,2,4]]
+# predd = classifier.predict(x)
 
 if predd == 2:
     Type = 'Benign' 
